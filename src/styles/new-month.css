@@ -1,0 +1,43 @@
+.new-month {
+  width: 50%;
+  height: 300px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.new-month__fieldset {
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  display: block;
+}
+
+.new-month__legend {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.new-month__legend-title {
+
+}
+
+.new-month__input-group {
+  margin: 10px 0;
+}
+
+.new-month__label {
+  margin: 15px;
+}
+
+.new-month__input {
+
+}
+
+.new-month__add-input-group {
+  position: absolute;
+}

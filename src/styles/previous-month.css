@@ -1,0 +1,13 @@
+.previous-month {
+  width: 30%;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.previous-month__table {
+  width: 100%;
+}
+
+.previous-month__table-cell {
+  width: 100%;
+}

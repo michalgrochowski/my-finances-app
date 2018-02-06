@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import '../styles/main-header.css';
 
-const Header = (props) => {
+const MainHeader = (props) => {
   return (
     <header className="main-header">
       <h1 className="main-header__title">Mój budżet</h1>
@@ -11,4 +11,4 @@ const Header = (props) => {
   )
 }
 
-export default Header;
+export default MainHeader;
