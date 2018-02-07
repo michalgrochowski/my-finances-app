@@ -1,0 +1,10 @@
+.current-month {
+  width: 45%;
+  height: 300px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

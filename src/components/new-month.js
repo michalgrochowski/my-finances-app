@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import NewMonthInpoutGroup from './new-month__input-group.js'
+import NewMonthInputGroup from './new-month__input-group.js'
 
 import '../styles/new-month.css';
 
@@ -16,8 +16,11 @@ class NewMonth extends Component {
     return(
       <form className="new-month">
         <fieldset className="new-month__fieldset">
-          <legend className="new-month__legend"><h2 className="new-month__legend-title">{this.props.month}</h2></legend>
-          <NewMonthInpoutGroup />
+          <legend className="new-month__legend"><h2 className="new-month__legend-title">Dodaj nowy</h2></legend>
+          <NewMonthInputGroup />
+          <NewMonthInputGroup />
+          <NewMonthInputGroup />
+          <NewMonthInputGroup />
         </fieldset>
       </form>
     );

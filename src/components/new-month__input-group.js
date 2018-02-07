@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import '../styles/new-month.css';
 
-const NewMonthInpoutGroup = (props) => {
+const NewMonthInputGroup = (props) => {
   return(
     <div className="new-month__input-group">
       <label className="new-month__label" for="">Wydatek:</label>
@@ -13,4 +13,4 @@ const NewMonthInpoutGroup = (props) => {
   )
 }
 
-export default NewMonthInpoutGroup;
+export default NewMonthInputGroup;

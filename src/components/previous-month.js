@@ -1,48 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+//import PreviousMonthRow from './previous-month-row.js';
 
 import '../styles/previous-month.css';
 
-class PreviousMonth extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    }
-  }
-
-  render() {
-    return(
-      <div className="previous-month">
-        <table className="previous-month__table">
-          <tr>
-            <td className="previous-month__table-cell previous-month__table-cell--title">
-              <h3 className="">{this.props.month}</h3>
-            </td>
-          </tr>
-          <tr>
-            <td className="previous-month__table-cell">
-              
-            </td>
-          </tr>
-          <tr>
-            <td className="previous-month__table-cell">
-              
-            </td>
-          </tr>
-          <tr>
-            <td className="previous-month__table-cell">
-              
-            </td>
-          </tr>
-          <tr>
-            <td className="previous-month__table-cell">
-              
-            </td>
-          </tr>
-        </table>
-      </div>
+const PreviousMonth = ({previousMonth}) => {
+  const PreviousMonthRow = props => {
+    const PreviousMonthsList = props.previousMonths.map(previousMonth => {
+    return (
+      <PreviousMonthRow 
+        key={previousMonth.wydatki} 
+        wydatki={previousMonth.wydatki}
+      />
     );
-  };
+  })
+
+  return (
+    <div className="previous-month">
+      <table className="previous-month__table">
+        <tr>
+          <td className="previous-month__table-cell previous-month__table-cell--title">
+            <h3 className="">{previousMonth.month}</h3>
+          </td>
+        </tr>
+        <PreviousMonthRow wydatki={previousMonth.wydatki} />
+      </table>
+    </div>
+  );
+  }
 }
 
 export default PreviousMonth;
