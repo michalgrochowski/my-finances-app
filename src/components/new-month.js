@@ -19,13 +19,17 @@ class NewMonth extends Component {
         <form className="new-month">
           <fieldset className="new-month__fieldset">
             <legend className="new-month__legend"><h2 className="new-month__legend-title">{this.props.month}</h2></legend>
+            <div className="new-month__input-group new-month__input-group--big">
+              <label className="new-month__label" htmlFor="">Zarobiłem:</label>
+              <input className="new-month__input" type="text"/>
+            </div>
             <NewMonthInputGroup />
             <NewMonthInputGroup />
             <NewMonthInputGroup />
             <NewMonthInputGroup />
           </fieldset>
+          <button className="new-month__add-button">Dodaj</button>
         </form>
-        <button className="">Dodaj</button>
       </React.Fragment>
     );
   };

@@ -2,16 +2,16 @@ import React from 'react';
 
 import '../styles/previous-month.css';
 
-const PreviousMonthRow = ({wydatki}) => {
-  const wydatekKey = Object.keys(wydatki);
-  const wydatekValue = Object.values(wydatki);
+const PreviousMonthRow = ({expense}) => {
+  const expenseKey = Object.keys(expense);
+  const expenseValue = Object.values(expense);
   return (
     <tr className="previous-month__row">
     <td className="previous-month__table-cell previous-month__table-cell--bordered">
-        {wydatekKey}
+        {expenseKey}
       </td>
       <td className="previous-month__table-cell previous-month__table-cell--bordered">
-        {wydatekValue}
+        {expenseValue}
       </td>
     </tr>
   );

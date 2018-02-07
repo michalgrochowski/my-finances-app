@@ -6,10 +6,12 @@
 
 .previous-month__table {
   width: 100%;
+  height: 100%;
 }
 
 .previous-month__table-body {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,6 +23,11 @@
   text-align: center;
 }
 
+.previous-month__subtitle {
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .previous-month__row {
   width: 90%;
   margin: 5px 5%;
@@ -28,9 +35,17 @@
   flex-direction: row;
 }
 
+.previous-month__row--end {
+  align-self: flex-end;
+}
+
 .previous-month__table-cell {
   display: block;
   width: 50%;
+}
+
+.previous-month__table-cell--big {
+  width: 100%;
 }
 
 .previous-month__table-cell--bordered {

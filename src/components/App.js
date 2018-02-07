@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 
 import MainHeader from './main-header.js';
-import MainFooter from './main-footer.js';
-import NewMonth from './new-month.js';
 import CurrentMonth from './current-month.js';
+import NewMonth from './new-month.js';
 import PreviousMonths from './previous-months.js';
+import MainFooter from './main-footer.js';
 
 import '../styles/App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
+
     const currentDate = new Date();
     const currentMonth = currentDate.getMonth();
     const months = ["Styczeń", "Luty", "Marzec", "kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
@@ -23,30 +24,39 @@ class App extends Component {
       previousMonths: [
         {
           month: "Październik",
-          wydatki: [
+          earned: "2000",
+          expenses: [
             {Siłka: 150},
-            {Pająk: 500},
-            {Telefon:  90},
-            {Liquidy: 240}
-          ]
+            {Jedzenie: 500},
+            {Telefon: 90},
+            {Liquidy: 240},
+            {Oszczedność: 400}
+          ],
+          left: ""
         },
         {
           month: "Listopad",
-          wydatki: [
+          earned: "1800",
+          expenses: [
             {Siłka: 120},
-            {Pająk: 300},
-            {Telefon:  70},
-            {Liquidy: 70}
-          ]
+            {Jedzenie: 300},
+            {Telefon: 70},
+            {Liquidy: 70},
+            {Oszczedność: 200}
+          ],
+          left: ""
         },
         {
           month: "Grudzień",
-          wydatki: [
+          earned: "2100",
+          expenses: [
             {Siłka: 50},
-            {Pająk: 200},
-            {Telefon:  75},
-            {Liquidy: 200}
-          ]
+            {Jedzenie: 200},
+            {Telefon: 75},
+            {Liquidy: 200},
+            {Oszczedność: 300}
+          ],
+          left: ""
         }
       ]
     }

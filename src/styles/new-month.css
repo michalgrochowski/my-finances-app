@@ -1,11 +1,11 @@
 .new-month {
   width: 45%;
-  height: 300px;
+  height: 400px;
   border-radius: 5px;
   border: 1px solid #000;
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -34,6 +34,15 @@
 
 .new-month__input-group {
   margin: 10px 0;
+  width: 100%;
+}
+
+.new-month__input-group--big {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .new-month__label {
@@ -49,4 +58,15 @@
 
 .new-month__add-input-group {
   position: absolute;
+}
+
+.new-month__add-button {
+  display: block;
+  margin: 10px 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background: none;
+  font-size: 18px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
