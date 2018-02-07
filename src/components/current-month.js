@@ -6,7 +6,7 @@ class CurrentMonth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      initialInputs: 4
+      month: props.month
     }
   }
 
@@ -14,31 +14,33 @@ class CurrentMonth extends Component {
     return(
       <div className="current-month">
         <table className="current-month__table">
-          <tr>
-            <td className="current-month__table-cell current-month__table-cell--title">
-              <h3 className="">{this.props.month}</h3>
-            </td>
-          </tr>
-          <tr>
-            <td className="current-month__table-cell">
-              
-            </td>
-          </tr>
-          <tr>
-            <td className="current-month__table-cell">
-              
-            </td>
-          </tr>
-          <tr>
-            <td className="current-month__table-cell">
-              
-            </td>
-          </tr>
-          <tr>
-            <td className="current-month__table-cell">
-              
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td className="current-month__table-cell current-month__table-cell--title">
+                <h3 className="">{this.state.month}</h3>
+              </td>
+            </tr>
+            <tr>
+              <td className="current-month__table-cell">
+                
+              </td>
+            </tr>
+            <tr>
+              <td className="current-month__table-cell">
+                
+              </td>
+            </tr>
+            <tr>
+              <td className="current-month__table-cell">
+                
+              </td>
+            </tr>
+            <tr>
+              <td className="current-month__table-cell">
+                
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     );

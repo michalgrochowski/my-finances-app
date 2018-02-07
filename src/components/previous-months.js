@@ -15,7 +15,7 @@ import '../styles/previous-month.css';
   });
 
   return (
-    <div class="previous-months-container__box">
+    <div className="previous-months-container__box">
       {PreviousMonthsList}
     </div>
   );
