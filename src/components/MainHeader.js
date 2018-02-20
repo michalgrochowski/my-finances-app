@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../styles/main-header.css';
-
 const MainHeader = (props) => {
   return (
     <header className="main-header">

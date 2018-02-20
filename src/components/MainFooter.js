@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../styles/main-footer.css';
-
 const MainFooter = (props) => {
   return (
     <footer className="main-footer">

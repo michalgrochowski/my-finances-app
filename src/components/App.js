@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
-import MainHeader from './main-header.js';
-import CurrentMonth from './current-month.js';
-import NewMonth from './new-month.js';
-import PreviousMonths from './previous-months.js';
-import MainFooter from './main-footer.js';
-
-import '../styles/App.css';
+import MainHeader from './MainHeader.js';
+import CurrentMonth from './CurrentMonth.js';
+import NewMonth from './NewMonth.js';
+import PreviousMonths from './PreviousMonths.js';
+import MainFooter from './MainFooter.js';
 
 class App extends Component {
   constructor(props) {

@@ -1,8 +1,6 @@
 import React from 'react';
 
-import PreviousMonth from './previous-month.js';
-
-import '../styles/previous-month.css';
+import PreviousMonth from './PreviousMonth.js';
 
   const PreviousMonths = props => {
     const PreviousMonthsList = props.previousMonths.map(previousMonth => {

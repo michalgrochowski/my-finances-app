@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../styles/new-month.css';
-
 const NewMonthInputGroup = (props) => {
   return(
     <div className="new-month__input-group">

@@ -1,8 +1,6 @@
 import React from 'react';
 
-import PreviousMonthRow from './previous-month-row.js'
-
-import '../styles/previous-month.css';
+import PreviousMonthRow from './PreviousMonthRow.js'
 
 const PreviousMonth = ({previousMonth}) => {
     const PreviousMonthRows = previousMonth.expenses.map((expense, index) => {

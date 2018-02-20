@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import NewMonthInputGroup from './new-month__input-group.js'
-
-import '../styles/new-month.css';
+import NewMonthInputGroup from './NewMonthInputGroup.js'
 
 class NewMonth extends Component {
   constructor(props) {
