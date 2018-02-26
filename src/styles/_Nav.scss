@@ -1,0 +1,25 @@
+.main-nav {
+  width: 25%;
+  background-color: rgb(200,200,200);
+  height: 100%;
+  overflow: hidden;
+  @include flex-center-column;
+}
+
+.main-nav__title {
+
+}
+
+.main-nav__list {
+  list-style: none;
+  height: 70%;
+  @include flex-center-column;
+  padding: 0;
+}
+
+.main-nav__list-item {
+  margin: 10px;
+  &--log-out {
+    margin-top: auto;
+  }
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import MainHeader from './MainHeader.js';
+import MainContent from './MainContent.js';
+import Nav from './Nav.js';
 import CurrentMonth from './CurrentMonth.js';
 import NewMonth from './NewMonth.js';
 import PreviousMonths from './PreviousMonths.js';
@@ -63,16 +64,10 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <MainHeader />
         <main className="main-container">
-          <CurrentMonth month={this.state.month} />
-          <NewMonth month={this.state.nextMonth} />
+          <Nav />
+          <MainContent />
         </main>
-        <aside className="previous-months-container">
-          <h3 className="previous-months-container__title">Poprzednie miesiące:</h3>
-          <PreviousMonths previousMonths={this.state.previousMonths} />
-        </aside>
-        <MainFooter />
       </React.Fragment>
     );
   }

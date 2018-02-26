@@ -1,0 +1,6 @@
+.main-content {
+  width: 75%;
+  min-height: 100vh;
+  overflow-y: scroll;
+  @include flex-center-column;
+}
