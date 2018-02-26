@@ -20,47 +20,7 @@ class App extends Component {
     const nextMonth = months[currentMonth + 1];
 
     this.state = {
-      user: "Michał",
-      month: monthName,
-      nextMonth: nextMonth,
-      previousMonths: [
-        {
-          month: "Październik",
-          earned: "2000",
-          expenses: [
-            {Siłka: 150},
-            {Jedzenie: 500},
-            {Telefon: 90},
-            {Liquidy: 240},
-            {Oszczedność: 400}
-          ],
-          left: ""
-        },
-        {
-          month: "Listopad",
-          earned: "1800",
-          expenses: [
-            {Siłka: 120},
-            {Jedzenie: 300},
-            {Telefon: 70},
-            {Liquidy: 70},
-            {Oszczedność: 200}
-          ],
-          left: ""
-        },
-        {
-          month: "Grudzień",
-          earned: "2100",
-          expenses: [
-            {Siłka: 50},
-            {Jedzenie: 200},
-            {Telefon: 75},
-            {Liquidy: 200},
-            {Oszczedność: 300}
-          ],
-          left: ""
-        }
-      ]
+      user: "Michał"
     }
   }
 
