@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom'
 
-import MainContent from './MainContent.js';
 import Nav from './Nav.js';
+
+// Routes
 import CurrentMonth from './CurrentMonth.js';
-import NewMonth from './NewMonth.js';
-import PreviousMonths from './PreviousMonths.js';
-import MainFooter from './MainFooter.js';
+import AddNewMonth from './AddNewMonth.js';
+import Archive from './Archive.js';
+import Settings from './Settings.js';
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class App extends Component {
     const nextMonth = months[currentMonth + 1];
 
     this.state = {
+      user: "Michał",
       month: monthName,
       nextMonth: nextMonth,
       previousMonths: [
@@ -65,8 +68,14 @@ class App extends Component {
     return (
       <React.Fragment>
         <main className="main-container">
-          <Nav />
-          <MainContent />
+          <Nav user={this.state.user}/>
+          <Switch>
+            <Route exact path='/' component={CurrentMonth}/>
+            <Route path='/aktualny' component={CurrentMonth}/>
+            <Route path='/nowy' component={AddNewMonth}/>
+            <Route path='/archiwum' component={Archive}/>
+            <Route path='/ustawienia' component={Settings}/>
+          </Switch>
         </main>
       </React.Fragment>
     );

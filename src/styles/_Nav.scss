@@ -7,7 +7,7 @@
 }
 
 .main-nav__title {
-
+  
 }
 
 .main-nav__list {
@@ -21,5 +21,14 @@
   margin: 10px;
   &--log-out {
     margin-top: auto;
+  }
+}
+
+.main-nav__link {
+  text-decoration: none;
+  color: $font-color-light-theme;
+  &:hover {
+    color: $font-color-light-theme-hovered;
+    text-decoration: underline;
   }
 }

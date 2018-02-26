@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CurrentMonth extends Component {
+class Settings extends Component {
   constructor(props) {
     super(props);
 
@@ -11,11 +11,11 @@ class CurrentMonth extends Component {
   render() {
     return(
       <section className="main-content">
-        <h2 className="main-content__title">Aktualny miesiąc</h2>
+        <h2 className="main-content__title">Ustawienia</h2>
       </section>
     )
   }
 }
 
 
-export default CurrentMonth;
+export default Settings;

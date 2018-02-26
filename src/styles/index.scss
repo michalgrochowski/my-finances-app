@@ -1,6 +1,7 @@
 // Mixins etc.
 
 @import "mixins.scss";
+@import "colors.scss";
 
 * {
   box-sizing: border-box;
@@ -33,10 +34,3 @@ body {
 @import "App.scss";
 @import "Nav.scss";
 @import "MainContent.scss";
-
-@import "CurrentMonth.scss";
-@import "MainFooter.scss";
-@import "MainHeader.scss";
-@import "NewMonth.scss";
-@import "PreviousMonthsRow.scss";
-@import "PreviousMonth.scss";
