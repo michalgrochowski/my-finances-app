@@ -1,21 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class CurrentMonth extends Component {
-  constructor(props) {
-    super(props);
+const CurrentMonth = (props) => {
+  return(
+    <section className="main-content">
+      <h2 className="main-content__title">Aktualny miesiąc</h2>
 
-    this.state = {
-      
-    }
-  }
-  render() {
-    return(
-      <section className="main-content">
-        <h2 className="main-content__title">Aktualny miesiąc</h2>
-      </section>
-    )
-  }
+    </section>
+  )
 }
-
 
 export default CurrentMonth;
