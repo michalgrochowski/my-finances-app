@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import firebase from 'firebase';
 
 // Actions
 import { fetchAllMonths } from "../actions/index";
@@ -22,21 +20,25 @@ class App extends Component {
     super(props);
 
     this.state = {
-      user: '',
+      user: ''
     }
+    this.loadData = this.loadData.bind(this);
   }
 
-  componentWillMount() {
-    const user = this.props.fetchAllMonths();
-    this.setState({
-      user: user
-    })
+  loadData() {
+    const user = this.props.fetchAllMonths().then((data) => {
+      this.setState({
+        user: data.payload.data
+      })
+      console.log(user);
+    });
   }
 
   render() {
     return (
         <main className="main-container">
           <Nav user={this.state.user}/>
+          <button onClick={this.loadData}>Załaduj</button>
           <Switch>
             <Route exact path='/' component={CurrentMonth}/>
             <Route path='/aktualny' component={CurrentMonth}/>

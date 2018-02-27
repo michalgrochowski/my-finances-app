@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import createHistory from 'history/createBrowserHistory';
-import { Route } from 'react-router';
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux';
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 import ReduxPromise from "redux-promise";
+import ReduxThunk from 'redux-thunk';
 
 // Reducers
 import rootReducer from './reducers';
@@ -20,9 +20,9 @@ import './styles/index.css';
 // Components
 import App from './containers/App.js';
 
-const history = createHistory()
+const history = createHistory();
 
-const middleware = routerMiddleware(history)
+const middleware = routerMiddleware(history);
 
 // Create store
 const store = createStore(
@@ -30,7 +30,7 @@ const store = createStore(
     ...rootReducer,
     router: routerReducer
   }),
-  applyMiddleware(middleware, ReduxPromise)
+  applyMiddleware(middleware, ReduxPromise, ReduxThunk)
 )
 
 ReactDOM.render((
