@@ -12,13 +12,18 @@ export function fetchAllMonths() {
     var errorMessage = error.message;
   });
 
-  const fetchedData = axios.get('https://my-finances-app-ef6dc.firebaseio.com/users/grhu.json')
-  .then((data) => {
-    return data;
-  });
+  const data = axios.get('https://my-finances-app-ef6dc.firebaseio.com/users/grhu.json');
+
+  /*onst data = fetch('https://my-finances-app-ef6dc.firebaseio.com/users/grhu.json')
+    .then(response => response.json())
+    .then(data => {
+        return data;
+      }
+    )
+    .catch(err => console.log(err));*/
   
   return {
     type: FETCH_ALL_MONTHS,
-    payload: fetchedData
+    payload: data
   };
 };

@@ -30,7 +30,7 @@ const store = createStore(
     ...rootReducer,
     router: routerReducer
   }),
-  applyMiddleware(middleware, ReduxPromise, ReduxThunk)
+  applyMiddleware(middleware, ReduxPromise)
 )
 
 ReactDOM.render((

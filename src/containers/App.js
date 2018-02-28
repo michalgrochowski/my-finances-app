@@ -16,29 +16,27 @@ import Archive from '../components/Archive.js';
 import Settings from '../components/Settings.js';
 
 class App extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
-    this.state = {
-      user: ''
-    }
-    this.loadData = this.loadData.bind(this);
+    this.login = this.login.bind(this);
   }
 
-  loadData() {
-    const user = this.props.fetchAllMonths().then((data) => {
-      this.setState({
-        user: data.payload.data
-      })
-      console.log(user);
-    });
+  login() {
+    this.props.fetchAllMonths();
+    console.log(this.props.data);
   }
 
   render() {
-    return (
+    console.log(this.props);
+    if (this.props.data === undefined) {
+      return (
+        <button onClick={this.login}>Login</button>
+      )
+    } else if (this.props.data !== undefined) {
+      return (
         <main className="main-container">
-          <Nav user={this.state.user}/>
-          <button onClick={this.loadData}>Załaduj</button>
+          <Nav user="user"/>
           <Switch>
             <Route exact path='/' component={CurrentMonth}/>
             <Route path='/aktualny' component={CurrentMonth}/>
@@ -48,6 +46,7 @@ class App extends Component {
           </Switch>
         </main>
     );
+    }
   }
 }
 
