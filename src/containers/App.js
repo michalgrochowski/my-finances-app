@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import firebase from 'firebase';
+
+import firebaseConfig from '../firebaseConfig.js';
 
 // Actions
 import { fetchAllMonths } from "../actions/index";
@@ -22,13 +25,19 @@ class App extends Component {
     this.login = this.login.bind(this);
   }
 
+  componentWillMount() {
+    firebase.initializeApp(firebaseConfig);
+    firebase.auth().signInAnonymously().catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
+  }
+
   login() {
     this.props.fetchAllMonths();
-    console.log(this.props.data);
   }
 
   render() {
-    console.log(this.props);
     if (this.props.data === undefined) {
       return (
         <button onClick={this.login}>Login</button>

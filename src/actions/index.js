@@ -1,26 +1,26 @@
 import firebase from 'firebase';
 // Firebase Config
-import firebaseConfig from '../firebaseConfig.js';
 import axios from 'axios';
 
 export const FETCH_ALL_MONTHS = 'FETCH_ALL_MONTHS';
 
 export function fetchAllMonths() {
-  firebase.initializeApp(firebaseConfig);
-  firebase.auth().signInAnonymously().catch(function(error) {
-    var errorCode = error.code;
-    var errorMessage = error.message;
+  /*const database = firebase.database();
+  const data = database.ref('/users/grhu').on('value', function(snapshot) {
+    return snapshot.val();
   });
 
-  const data = axios.get('https://my-finances-app-ef6dc.firebaseio.com/users/grhu.json');
-
-  /*onst data = fetch('https://my-finances-app-ef6dc.firebaseio.com/users/grhu.json')
-    .then(response => response.json())
+  console.log(data)*/
+  
+  const data = fetch('https://my-finances-app-ef6dc.firebaseio.com/users/grhu.json')
+    .then(async (response) => response.json())
     .then(data => {
+        console.log(data);
         return data;
       }
     )
-    .catch(err => console.log(err));*/
+
+  console.log(data);
   
   return {
     type: FETCH_ALL_MONTHS,
