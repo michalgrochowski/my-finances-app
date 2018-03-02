@@ -12,18 +12,12 @@ export function fetchAllMonths() {
 
   console.log(data)*/
   
-  const data = fetch('https://my-finances-app-ef6dc.firebaseio.com/users/grhu.json')
-    .then(async (response) => response.json())
+  return fetch('https://my-finances-app-ef6dc.firebaseio.com/users/grhu.json')
+    .then(response => response.json())
     .then(data => {
-        console.log(data);
-        return data;
-      }
-    )
-
-  console.log(data);
-  
-  return {
-    type: FETCH_ALL_MONTHS,
-    payload: data
-  };
+      return {
+        type: FETCH_ALL_MONTHS,
+        data
+      };
+    });
 };
