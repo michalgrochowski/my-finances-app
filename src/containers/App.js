@@ -7,7 +7,7 @@ import firebase from 'firebase';
 import firebaseConfig from '../firebaseConfig.js';
 
 // Actions
-import { fetchAllMonths } from "../actions/index";
+import { fetchAllMonths, fetchSomeMonths } from "../actions/index";
 
 // Static components
 import Nav from '../components/Nav.js';
@@ -27,10 +27,13 @@ class App extends Component {
 
   componentWillMount() {
     firebase.initializeApp(firebaseConfig);
-    firebase.auth().signInAnonymously().catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-    });
+    firebase
+      .auth()
+      .signInAnonymously()
+      .catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
   }
 
   login() {
@@ -38,17 +41,21 @@ class App extends Component {
   }
 
   render() {
-    if (this.props.data === undefined) {
+    if (Object.keys(this.props.data).length === 0) {
       return (
         <button onClick={this.login}>Login</button>
       )
-    } else if (this.props.data !== undefined) {
+    } else if (Object.keys(this.props.data).length !== 0) {
       return (
         <main className="main-container">
-          <Nav user="user"/>
+          <Nav user={this.props.data.data}/>
           <Switch>
-            <Route exact path='/' component={CurrentMonth}/>
-            <Route path='/aktualny' component={CurrentMonth}/>
+            <Route exact path='/' render={(props) => ( 
+              <CurrentMonth data={this.props.data.data.data.months}/> )} 
+            />
+            <Route path='/aktualny' render={(props) => ( 
+              <CurrentMonth data={this.props.data}/> )} 
+            />
             <Route path='/nowy' component={AddNewMonth}/>
             <Route path='/archiwum' component={Archive}/>
             <Route path='/ustawienia' component={Settings}/>
@@ -59,12 +66,17 @@ class App extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
+/*function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchAllMonths }, dispatch);
-}
+}*/
 
 function mapStateToProps({ data }) {
   return { data };
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
+export default withRouter(
+  connect(mapStateToProps, {
+    fetchAllMonths,
+    fetchSomeMonths
+  })(App)
+);

@@ -1,8 +1,9 @@
 import React from 'react';
 
 const CurrentMonthBox = (props) => {
+  console.log(props);
   return(
-    <p>props</p>
+    <p>123</p>
   )
 }
 
